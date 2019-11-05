@@ -1,0 +1,39 @@
+.interface {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.display {
+  border: 5px solid black;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  margin-bottom: -15px;
+  float: left;
+  text-align: center;
+}
+
+.nav {
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  float: left;
+  text-align: center;
+}
+
+.split-screen {
+  display: grid;
+  height:100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 30% 69%;
+  /*justify-content: space-evenly;*/
+  grid-gap: 5px;
+}

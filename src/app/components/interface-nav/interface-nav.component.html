@@ -1,0 +1,51 @@
+<br *ngIf='showBackButton'>
+<div *ngIf='showBackButton' class='button' (click)='setNavMenu("home")'>Back</div>
+<div *ngIf='showCircles' class='button' (click)='setNavMenu("newlayer")'>Back</div>
+<div *ngIf='showSquares' class='button' (click)='setNavMenu("newlayer")'>Back</div>
+
+<h1 *ngIf='navHome'>
+  Control Panel
+</h1>
+
+<div *ngIf='navHome' class='button' (click)='setNavMenu("newlayer")'>
+  New Layer
+</div>
+
+<h1 *ngIf='newLayerTitle'>
+  New Layer
+</h1>
+
+<div *ngIf='showShapeButtons' class='button' (click)='shapeSelected("circles")'>Circle Layer</div>
+
+<h1 *ngIf='showCircles'>
+  Circles Layer
+</h1>
+<h1 *ngIf='showSquares'>
+  Squares Layer
+</h1>
+
+<app-interface-nav-data *ngIf='showData' [showGenerateButton]='showGenerateButton' [shapeType]='shapeType' (saveButtonEmitter)='saveButton($event)'></app-interface-nav-data>
+<!--
+<app-interface-nav-new-layer-circles *ngIf='showCircles' (saveButtonEmitter)='saveButton($event)' (selectedShapeEmitter)='shapeSelected("back")'></app-interface-nav-new-layer-circles>
+-->
+<div *ngIf='showShapeButtons' class='button' (click)='shapeSelected("squares")'>Square Layer</div>
+
+<!--
+<app-interface-nav-new-layer-squares *ngIf='showSquares' (saveButtonEmitter)='saveButton($event)' (selectedShapeEmitter)='shapeSelected("back")'></app-interface-nav-new-layer-squares>
+-->
+
+<br *ngIf='showShapeButtons'>
+
+<div *ngIf='showSaveButton' class='button' #saveLayer (click)='saveLayerUpdate()'>Save Layer</div>
+
+<br *ngIf='newLayer'>
+<div *ngIf='newLayer'>Number of Saved Layers: {{numberOfLayers}}</div>
+<br *ngIf='newLayer'>
+<div *ngIf='showEditButton' class='button' (click)='setNavMenu("editlayer")'>Edit Layers</div>
+
+<h1 *ngIf='showEditTitle'>
+  Edit Layers
+</h1>
+
+<app-interface-nav-edit-layer *ngIf='editLayer' (showDataEmitter)='showDataShapeType($event)' (goBackEmitter)='setNavMenu("editlayer")' (showTitleEmitter)='hideEditTitle()'></app-interface-nav-edit-layer>
+<app-interface-nav-data *ngIf='editLayer' [showGenerateButton]='showGenerateButton' [shapeType]='shapeType' (saveButtonEmitter)='saveButton($event)'></app-interface-nav-data>

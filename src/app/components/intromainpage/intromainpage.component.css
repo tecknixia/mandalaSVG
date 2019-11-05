@@ -1,17 +1,12 @@
-body {
-  margin-top: 1px;
-  margin-left: 1px;
-  margin-right: 1px;
-}
 
-.button {
-  background-color: #61dafb; /* previous color: #ccccff */
+.continue-button {
+  background-color: #61dafb;
   text-align: center;
   font-weight: bold;
-  border: 2px #000 solid;
+  border: 5px #000 solid;
   border-radius: 10px;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 37%;
+  margin-right: 37%;
   margin-top: 5px;
   margin-bottom: 5px;
   padding-top: 10px;
@@ -22,4 +17,12 @@ body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.introPage {
+  display: block;
 }

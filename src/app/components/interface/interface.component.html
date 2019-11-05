@@ -1,0 +1,10 @@
+<div [className]="'interface'">
+  <div class='split-screen'>
+    <div class="nav">
+      <app-interface-nav (sendChoice)='setNavMenu($event)'></app-interface-nav>
+    </div>
+    <div class="display">
+      <app-interface-display></app-interface-display>
+    </div>
+  </div>
+</div>

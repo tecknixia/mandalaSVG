@@ -1,0 +1,96 @@
+<form>
+
+  <div [ngSwitch]='shapeType'>
+
+    <div *ngSwitchCase="'circle'">
+      <div class='circles-input'>
+        <label>Number of Circles: </label>
+        <input
+          type='number'
+          min='0'
+          max='999'
+          value='7'
+          #circles
+          (change)='this.dataService.modifyObjectValue("circle-number", circles.value, circleSize.value, circleRadius.value)'>
+      </div>
+
+      <div class='circle-size-input'>
+        <label>Circle Size: </label>
+        <input
+          type=number
+          min="1"
+          maxlength="999"
+          value='30'
+          #circleSize
+          (change)='this.dataService.modifyObjectValue("circle-size", circleSize.value)'>
+      </div>
+      <br>
+
+      <div class='radius-input'>
+        <label>Layer Radius: </label>
+        <input
+          type=number
+          min="-999"
+          max="999"
+          value='30'
+          #circleRadius
+          (change)='this.dataService.modifyObjectValue("circle-radius", circleRadius.value)'>
+      </div>
+
+      <br *ngIf='showGenerateButton'>
+
+      <div
+        *ngIf='showGenerateButton'
+        class='button'
+        #newLayer
+        (click)='clickGenerateButton("circle", circles.value, circleSize.value, circleRadius.value)'>Generate Layer</div>
+    </div>
+
+    <div *ngSwitchCase="'square'">
+      <div class='squares-input'>
+        <label>Number of Squares: </label>
+        <input
+          type=number
+          min="0"
+          max="999"
+          value='8'
+          #squares
+          (change)='this.dataService.modifyObjectValue("square-number", squares.value)'>
+      </div>
+
+      <div class='square-size-input'>
+        <label>Square Size: </label>
+        <input
+          type=number
+          min="1"
+          maxlength="999"
+          value='30'
+          #squareSize
+          (change)='this.dataService.modifyObjectValue("square-size", squareSize.value)'>
+      </div>
+      <br>
+
+      <div class='radius-input'>
+        <label>Layer Radius: </label>
+        <input
+          type=number
+          min="-999"
+          max="999"
+          value='30'
+          #squareRadius
+          (change)='this.dataService.modifyObjectValue("square-radius", squareRadius.value)'>
+      </div>
+
+      <br *ngIf='showGenerateButton'>
+
+      <div
+        *ngIf='showGenerateButton'
+        class='button'
+        #newLayer
+        (click)='clickGenerateButton("square", squares.value, squareSize.value, squareRadius.value)'>Generate Layer</div>
+    </div>
+
+    <div *ngSwitchCase="'hidden'"></div>
+  </div>
+
+</form>

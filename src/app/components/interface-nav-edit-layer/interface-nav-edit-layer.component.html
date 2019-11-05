@@ -1,0 +1,24 @@
+<div *ngIf=properties class='button' (click)='propertiesBack()'>Back</div>
+
+<h1 *ngIf=properties>
+  Layer {{selectedLayer}} Properties
+</h1>
+
+<div *ngFor='let layer of layerInfo'>
+  <div *ngIf=editLayers class='layer-edit' (click)=selectLayer(layer.layerNumber)>Layer {{layer.layerNumber}}</div>
+</div>
+
+<p *ngIf=noLayers>
+  No layers to edit.
+</p>
+
+<!--
+<div *ngIf=properties>
+  <div *ngIf=circleTrue>
+    <app-interface-nav-new-layer-circles [showGenerateButton]='showGenerateButton'></app-interface-nav-new-layer-circles>
+  </div>
+  <div *ngIf='squareTrue'>
+    <app-interface-nav-new-layer-squares [showGenerateButton]='showGenerateButton'></app-interface-nav-new-layer-squares>
+  </div>
+</div>
+-->
